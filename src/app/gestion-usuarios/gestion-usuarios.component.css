@@ -1,0 +1,14 @@
+.container {
+    padding: 20px 0px;
+    text-align: center;
+}
+
+i {
+    cursor: pointer;
+}
+
+.add-user {
+    margin: 10px 0px;
+    display: flex;
+    flex-direction:row-reverse;
+}

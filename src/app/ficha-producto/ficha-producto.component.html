@@ -1,0 +1,34 @@
+<h2>{{producto.title}}</h2>
+<div class="ficha-container">
+    <div id="carouselExample" class="card carousel slide" *ngIf="producto">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img [src]="producto.images[0]" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img [src]="producto.images[1]" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img [src]="producto.images[2]" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>  
+    </div>
+</div>
+<div class="card second" style="width: 18rem;" *ngIf="producto">
+    <div class="card-header">
+        {{producto.description}}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{producto.price | currency: 'EUR'}}</li>
+      <li class="list-group-item">{{producto.creationAt | date: 'yyyy'}}</li>
+    </ul>
+</div>
+<button class="btn btn-secondary mt-1" [routerLink]="['/productos/categoria', producto.category.id]">Volver</button>

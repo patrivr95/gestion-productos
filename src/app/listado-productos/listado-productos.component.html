@@ -1,0 +1,16 @@
+<div class="filtro">
+    <app-filtro-precio (onFilter)="onFilter($event)"></app-filtro-precio>
+</div>
+<p class="pt-4 fw-bold" *ngIf="listadoProductos">{{listadoProductos.length}} productos</p>
+<div class="listado" *ngIf="listadoProductos">
+    <div class="card" style="width: 18rem;" *ngFor="let producto of listadoProductos" [routerLink]="['/producto', producto.title.split(' ').join('-')]" [queryParams]="{idproducto: producto.id}">
+        <img [src]="producto.images[0]" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{producto.title}}</h5>
+          {{producto.creationAt | date: "MMMM-yyyy"}}
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{producto.price | currency: 'EUR'}}</li>
+        </ul>
+      </div>
+</div>

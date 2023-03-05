@@ -1,0 +1,32 @@
+<form novalidate [formGroup]="form" (ngSubmit)="onSubmit()" class="d-flex gap-2 container">
+    <div class="">
+      <label for="email" class="form-label">Email</label>
+      <input type="text" class="form-control" id="email" name="email" formControlName="email">    
+    </div>
+
+    <div class="">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="name" name="name" formControlName="name">    
+    </div>
+
+    <div class="">
+        <label for="password" class="form-label">Password</label>
+        <input type="text" class="form-control" id="password" name="password" formControlName="password">    
+    </div>
+
+    <div class="">
+        <label for="role" class="form-label">Role</label>
+        <input type="text" class="form-control" id="role" name="role" formControlName="role">    
+    </div>
+
+    <div class="">
+        <label for="avatar" class="form-label">Avatar</label>
+        <input type="text" class="form-control" id="avatar" name="avatar" formControlName="avatar">    
+    </div>
+
+      
+   
+    <div class="d-flex align-items-end">
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">{{textoBoton}}</button>
+    </div>  
+  </form>

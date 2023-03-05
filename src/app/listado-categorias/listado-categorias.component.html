@@ -1,0 +1,6 @@
+<div class="listado" *ngIf="categorias">
+    <figure class="figure" *ngFor="let categoria of categorias" [routerLink]="['/productos/categoria', categoria.id]">
+        <img [src]="categoria.image" class="figure-img img-fluid rounded" [alt]="'Imagen de la categoria ' + categoria.name">
+        <figcaption class="figure-caption">{{categoria.name}}</figcaption>
+      </figure>
+</div>

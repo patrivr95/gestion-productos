@@ -1,0 +1,6 @@
+<h2>Modifica tus datos personales</h2>
+<div class="container">
+    <app-formulario-usuario [datos]="usuario" [roleDisabled]="true" (enviarUsuario)="enviarUsuario($event)"></app-formulario-usuario>
+    <div class="form text-danger" *ngIf="mensajeError !== ''">{{mensajeError}}</div>
+    <div class="form text-success" *ngIf="mensajeCorrecto">El usuario se ha modificado correctamente</div>
+</div>

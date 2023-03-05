@@ -1,0 +1,23 @@
+<div class="container p-2">
+    <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" formControlName="email">
+          <div class="form-text text-danger" *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">Debes introducir tu email</div>
+          <div class="form-text text-danger" *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">El formato no es válido</div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" formControlName="password">
+          <div class="form-text text-danger" *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">La contraseña es obligatoria</div>
+        </div>
+        <!-- <a [routerLink]="['/registro']">¿No tienes cuenta? Registrate</a> -->
+        <div class="d-flex justify-content-center mt-3">
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Login</button>
+        </div>
+        <div class="form-text text-danger" *ngIf="mensajeError !== ''">
+            {{mensajeError}}
+        </div>
+      </form>
+</div>
+

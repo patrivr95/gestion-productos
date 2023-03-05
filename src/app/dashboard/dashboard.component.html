@@ -1,0 +1,7 @@
+<div class="container text-center p-5 bg-info mt-5">
+    <h1 class="pb-3">Bienvenido a tu dashboard <span>👋</span></h1>
+    <p *ngIf="usuario.role === 'admin'; else bloqueCuentaUsuario"> Aqui podras añadir nuevos usuarios y productos, borrarlos, o editar los ya existentes</p>
+    <ng-template #bloqueCuentaUsuario>
+        <p>Aqui podras consultar y modificar tus datos personales</p>
+    </ng-template>
+</div>
